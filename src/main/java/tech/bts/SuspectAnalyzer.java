@@ -3,7 +3,7 @@ package tech.bts;
 public class SuspectAnalyzer {
 
     public boolean match (Suspect s1, Suspect s2) {
-        if (s1.isMale() && s2.isMale()) {
+        if (s1.isMale() == s2.isMale()) {
             int points = 0;
             boolean differentHair = true;
             boolean differentEyes = true;
