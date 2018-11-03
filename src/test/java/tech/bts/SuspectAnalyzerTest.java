@@ -1,7 +1,7 @@
 package tech.bts;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class SuspectAnalyzerTest {
 
@@ -72,6 +72,13 @@ public class SuspectAnalyzerTest {
         boolean matchResultWoman = suspectAnalyzer.match(new Suspect("Anna", 32, 165, 61, "blond", "blue", false),
                 new Suspect("Anna", 32, 165, 61, "brown", "green", false));
         assertEquals(true, matchResultWoman);
+    }
+
+    @Test
+    public void only_gender_changes() {
+        SuspectAnalyzer suspectAnalyzer = new SuspectAnalyzer();
+        assertFalse(suspectAnalyzer.match(new Suspect("Tony", 35, 180, 86, "brown", "green", true),
+                new Suspect("Tony", 35, 180, 86, "brown", "green", false)));
     }
 
 
